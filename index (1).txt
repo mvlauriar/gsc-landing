@@ -1,55 +1,658 @@
-GSC
-Guardians of the Sacred Chapel 
-Request access
-✦ ✦ ✦
-For parishes that keep watch.
-Simple software for Eucharistic Adoration. Sign-up sheets, hour-by-hour check-in, and gentle alerts when the chapel needs a Guardian — so the Blessed Sacrament is never left alone. 
-Request access for your parish
-See how it works
-Built by parishioners, for parishioners.
-THE HIDDEN BURDEN
-Keeping track of a chapel shouldn't be this hard.
-Spreadsheets and clipboards. Phone trees and last-minute pleas. Coordinators stretched thin, trying to make sure someone is always there. Volunteers wanting to help, but unsure where the gaps are. 
-We know — because we've lived it. So we built something simple. 
-WHAT GUARDIANS DOES
-Quietly handles the logistics.  You handle the prayer.
-Everything a coordinator needs, nothing they don't.
-✦
-Sign up with a QR code
-One tap, one minute. Parishioners scan a code at the chapel door, choose their hour, and they're done. Recurring weekly slots available. Fully bilingual.
-✦
-Check-in at the door
-A simple tablet at the chapel entrance. Volunteers tap their name when they arrive. No login, no app, no friction — even for the oldest parishioners.
-✦
-Gentle alerts when needed
-If no one has arrived for an hour, the coordinator gets a text. No false alarms, no constant noise — only when the chapel actually needs attention.
-✦
-Honest accountability
-Track attendance, no-shows, and substitute requests in one place. Know who your most faithful Guardians are. Follow up gracefully with those who don't show.
-“
-Know also that you will probably gain more by praying fifteen minutes before the Blessed Sacrament than by all the other spiritual exercises of the day. True, Our Lord hears our prayers anywhere, for He has made the promise, ‘Ask, and you shall receive’, but He has revealed to His servants that those who visit Him in the Blessed Sacrament will obtain a more abundant measure of grace. 
-— St. Alphonsus Liguori
-WHO THIS IS FOR
-For the parish coordinator who has done enough.
-You've been running adoration on faith and a Google Sheet for years. You know every regular by name and call them when there's a gap. You love this ministry, but the logistics are exhausting. 
-Guardians of the Sacred Chapel is for you. It's not a corporate platform. It's a tool that quietly handles the scheduling so your parish can grow Eucharistic devotion without the hassle. Built specifically for the people doing this work, by the people doing this work. 
-REQUEST ACCESS
-Help us bring this to your parish.
-We're working with a small number of pilot parishes. Tell us about yours.
-YOUR NAME
-EMAIL
-PARISH & LOCATION
-WHEN WOULD YOU NEED THIS?
-          Choose a timeframe…
-          As soon as possible — we're struggling now
-          Within the next 3 months
-          Within the next 6 months
-          Within the next year
-          Just exploring
-         
-TELL US ABOUT YOUR CHAPEL
-Request Access
-We'll respond personally within a few days. No bots.
-May the Sacred Heart of Jesus be praised, adored, and loved.
-Sea alabado, adorado y amado el Sagrado Corazón de Jesús.
-Guardians of the Sacred Chapel · Built by parishioners
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Guardians of the Sacred Chapel</title>
+<meta name="description" content="Software for parishes running Eucharistic Adoration. Built by parishioners for parishioners." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg: #faf6ee;
+    --bg-card: #ffffff;
+    --bg-deep: #f4ede0;
+    --ink: #1f1a12;
+    --ink-strong: #14110b;
+    --ink-secondary: #4a4030;
+    --ink-tertiary: #786a55;
+    --rule: #d4c9ad;
+    --rule-soft: #e7dec7;
+    --gold: #8a6418;
+    --gold-soft: #b8943e;
+    --burgundy: #5a1818;
+    --burgundy-soft: #7a2828;
+    --shadow-soft: 0 1px 3px rgba(31, 26, 18, 0.06), 0 8px 32px rgba(31, 26, 18, 0.05);
+    --shadow-strong: 0 4px 12px rgba(31, 26, 18, 0.08), 0 16px 48px rgba(31, 26, 18, 0.08);
+
+    --font-display: 'EB Garamond', Georgia, 'Times New Roman', serif;
+    --font-prose: 'Lora', Georgia, serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-prose);
+    font-size: 18px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--burgundy); text-decoration: none; }
+  a:hover { color: var(--burgundy-soft); }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ============ NAV ============ */
+  .nav {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--ink-strong);
+  }
+  .brand-mark {
+    width: 38px;
+    height: 38px;
+    border: 1.5px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+  }
+  .brand-name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.005em;
+    line-height: 1.15;
+  }
+  .brand-name .short { display: none; }
+  @media (min-width: 700px) {
+    .brand-name { font-size: 20px; }
+  }
+  .nav-cta {
+    display: inline-block;
+    background: var(--burgundy);
+    color: #fef9ee;
+    padding: 10px 18px;
+    border-radius: 4px;
+    font-family: var(--font-prose);
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.01em;
+    border: 0;
+    cursor: pointer;
+  }
+  .nav-cta:hover { color: #fef9ee; background: var(--burgundy-soft); }
+
+  /* ============ HERO ============ */
+  .hero {
+    padding: 96px 0 80px;
+    text-align: center;
+  }
+  .hero .ornament {
+    color: var(--gold);
+    letter-spacing: 0.5em;
+    font-size: 18px;
+    margin-bottom: 28px;
+    font-family: var(--font-display);
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(40px, 6.5vw, 68px);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: var(--ink-strong);
+    margin: 0 0 24px;
+  }
+  .hero h1 .accent {
+    font-style: italic;
+    color: var(--burgundy);
+    font-weight: 500;
+  }
+  .hero-sub {
+    font-family: var(--font-prose);
+    font-size: clamp(19px, 2.2vw, 23px);
+    color: var(--ink-secondary);
+    max-width: 640px;
+    margin: 0 auto 40px;
+    line-height: 1.5;
+  }
+  .hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--burgundy);
+    color: #fef9ee;
+    padding: 16px 32px;
+    border-radius: 4px;
+    font-family: var(--font-prose);
+    font-weight: 500;
+    font-size: 17px;
+    letter-spacing: 0.01em;
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+  }
+  .btn-primary:hover { color: #fef9ee; background: var(--burgundy-soft); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--ink-strong);
+    padding: 16px 32px;
+    border: 1.5px solid var(--ink-strong);
+    border-radius: 4px;
+    font-family: var(--font-prose);
+    font-weight: 500;
+    font-size: 17px;
+    cursor: pointer;
+    display: inline-block;
+  }
+  .btn-secondary:hover { color: var(--ink-strong); background: var(--bg-deep); }
+
+  .hero-tagline {
+    margin-top: 48px;
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--ink-tertiary);
+    font-size: 18px;
+  }
+
+  /* ============ PROBLEM SECTION ============ */
+  .section-divider {
+    text-align: center;
+    margin: 0 auto;
+    color: var(--gold);
+    font-size: 14px;
+    letter-spacing: 0.4em;
+    padding: 8px 0;
+  }
+  .problem {
+    padding: 80px 0;
+    background: var(--bg-deep);
+    border-top: 1px solid var(--rule-soft);
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .problem-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .section-label {
+    font-family: var(--font-prose);
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+  .section-h2 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(28px, 4vw, 38px);
+    line-height: 1.15;
+    color: var(--ink-strong);
+    margin: 0 0 24px;
+  }
+  .section-h2 .accent { color: var(--burgundy); font-style: italic; }
+  .problem p {
+    font-size: 19px;
+    line-height: 1.65;
+    color: var(--ink-secondary);
+    margin: 0 0 16px;
+  }
+  .problem p:last-child { margin-bottom: 0; }
+
+  /* ============ FEATURES ============ */
+  .features {
+    padding: 96px 0 64px;
+  }
+  .features-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 64px;
+  }
+  .features-header p {
+    font-size: 19px;
+    color: var(--ink-secondary);
+    margin: 0;
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  @media (min-width: 700px) {
+    .features-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  }
+  .feature-card {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 32px 28px;
+    box-shadow: var(--shadow-soft);
+  }
+  .feature-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--bg-deep);
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  .feature-card h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--ink-strong);
+    margin: 0 0 10px;
+    line-height: 1.2;
+  }
+  .feature-card p {
+    margin: 0;
+    color: var(--ink-secondary);
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  /* ============ QUOTE SECTION ============ */
+  .quote-section {
+    padding: 96px 0;
+    background: var(--ink-strong);
+    color: #f4ede0;
+    text-align: center;
+  }
+  .quote-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .quote-mark {
+    color: var(--gold-soft);
+    font-family: var(--font-display);
+    font-size: 64px;
+    line-height: 0.5;
+    margin-bottom: 24px;
+  }
+  .quote-text {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(22px, 2.6vw, 28px);
+    line-height: 1.5;
+    color: #f4ede0;
+    margin: 0 0 24px;
+  }
+  .quote-attrib {
+    font-family: var(--font-prose);
+    font-weight: 500;
+    color: var(--gold-soft);
+    letter-spacing: 0.08em;
+    font-size: 15px;
+  }
+
+  /* ============ FOR WHO ============ */
+  .for-who {
+    padding: 96px 0;
+  }
+  .for-who-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .for-who p {
+    font-size: 19px;
+    line-height: 1.65;
+    color: var(--ink-secondary);
+    margin: 0 0 18px;
+  }
+  .for-who p strong { color: var(--ink-strong); font-weight: 600; }
+  .for-who p:last-child { margin-bottom: 0; }
+
+  /* ============ FORM ============ */
+  .form-section {
+    padding: 80px 0 96px;
+    background: var(--bg-deep);
+    border-top: 1px solid var(--rule-soft);
+  }
+  .form-inner {
+    max-width: 580px;
+    margin: 0 auto;
+  }
+  .form-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .form-header p {
+    color: var(--ink-secondary);
+    font-size: 18px;
+    margin: 16px 0 0;
+  }
+  form.gsc-form {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 36px 32px;
+    box-shadow: var(--shadow-strong);
+  }
+  .field { margin-bottom: 20px; }
+  .field label {
+    display: block;
+    font-family: var(--font-prose);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-strong);
+    margin-bottom: 8px;
+  }
+  .field input[type="text"],
+  .field input[type="email"],
+  .field select,
+  .field textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1.5px solid var(--rule);
+    border-radius: 4px;
+    background: var(--bg);
+    font-size: 17px;
+    font-family: var(--font-prose);
+    color: var(--ink-strong);
+  }
+  .field textarea { min-height: 100px; resize: vertical; }
+  .field input:focus, .field select:focus, .field textarea:focus {
+    outline: none;
+    border-color: var(--ink-strong);
+  }
+  .form-submit {
+    width: 100%;
+    background: var(--burgundy);
+    color: #fef9ee;
+    padding: 16px;
+    border-radius: 4px;
+    font-family: var(--font-prose);
+    font-weight: 500;
+    font-size: 17px;
+    letter-spacing: 0.02em;
+    border: 0;
+    cursor: pointer;
+    margin-top: 8px;
+  }
+  .form-submit:hover { background: var(--burgundy-soft); }
+  .form-submit:disabled { opacity: 0.6; cursor: wait; }
+  .form-help {
+    text-align: center;
+    margin-top: 16px;
+    color: var(--ink-tertiary);
+    font-size: 14px;
+    font-style: italic;
+  }
+  .form-success {
+    background: #ecf3ec;
+    border: 1.5px solid #6da077;
+    color: #234d2e;
+    padding: 28px;
+    border-radius: 6px;
+    text-align: center;
+    display: none;
+  }
+  .form-success h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 24px;
+    margin: 0 0 8px;
+    color: #234d2e;
+  }
+  .form-success p { margin: 0; }
+
+  /* ============ FOOTER ============ */
+  .footer {
+    padding: 48px 0 64px;
+    text-align: center;
+    border-top: 1px solid var(--rule-soft);
+  }
+  .footer-tag {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--ink-secondary);
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .footer-tag-es {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--ink-tertiary);
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+  .footer-meta {
+    color: var(--ink-tertiary);
+    font-size: 14px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#" class="brand">
+      <span class="brand-mark">GSC</span>
+      <span class="brand-name">
+        <span class="full">Guardians of the Sacred Chapel</span>
+        <span class="short">GSC</span>
+      </span>
+    </a>
+    <a href="#request" class="nav-cta">Request access</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="container">
+    <div class="ornament">✦ ✦ ✦</div>
+    <h1>For parishes that <span class="accent">keep watch.</span></h1>
+    <p class="hero-sub">
+      Simple software for Eucharistic Adoration. Sign-up sheets, hour-by-hour check-in, and gentle alerts when the chapel needs a Guardian — so the Blessed Sacrament is never left alone.
+    </p>
+    <div class="hero-actions">
+      <a href="#request" class="btn-primary">Request access for your parish</a>
+      <a href="#features" class="btn-secondary">See how it works</a>
+    </div>
+    <div class="hero-tagline">Built by parishioners, for parishioners.</div>
+  </div>
+</header>
+
+<!-- ============ PROBLEM ============ -->
+<section class="problem">
+  <div class="container problem-inner">
+    <div class="section-label">The Hidden Burden</div>
+    <h2 class="section-h2">Keeping track of a chapel <span class="accent">shouldn't be this hard.</span></h2>
+    <p>
+      Spreadsheets and clipboards. Phone trees and last-minute pleas. Coordinators stretched thin, trying to make sure someone is always there. Volunteers wanting to help, but unsure where the gaps are.
+    </p>
+    <p>
+      We know — because we've lived it. So we built something simple.
+    </p>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section class="features" id="features">
+  <div class="container">
+    <div class="features-header">
+      <div class="section-label">What Guardians Does</div>
+      <h2 class="section-h2">Quietly handles the logistics. <br/><span class="accent">You handle the prayer.</span></h2>
+      <p>Everything a coordinator needs, nothing they don't.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">✦</div>
+        <h3>Sign up with a QR code</h3>
+        <p>One tap, one minute. Parishioners scan a code at the chapel door, choose their hour, and they're done. Recurring weekly slots available. Fully bilingual.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">✦</div>
+        <h3>Check-in at the door</h3>
+        <p>A simple tablet at the chapel entrance. Volunteers tap their name when they arrive. No login, no app, no friction — even for the oldest parishioners.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">✦</div>
+        <h3>Gentle alerts when needed</h3>
+        <p>If no one has arrived for an hour, the coordinator gets a text. No false alarms, no constant noise — only when the chapel actually needs attention.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">✦</div>
+        <h3>Honest accountability</h3>
+        <p>Track attendance, no-shows, and substitute requests in one place. Know who your most faithful Guardians are. Follow up gracefully with those who don't show.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUOTE ============ -->
+<section class="quote-section">
+  <div class="container quote-inner">
+    <div class="quote-mark">&ldquo;</div>
+    <p class="quote-text">
+      Know also that you will probably gain more by praying fifteen minutes before the Blessed Sacrament than by all the other spiritual exercises of the day. True, Our Lord hears our prayers anywhere, for He has made the promise, &lsquo;Ask, and you shall receive&rsquo;, but He has revealed to His servants that those who visit Him in the Blessed Sacrament will obtain a more abundant measure of grace.
+    </p>
+    <div class="quote-attrib">— St. Alphonsus Liguori</div>
+  </div>
+</section>
+
+<!-- ============ FOR WHO ============ -->
+<section class="for-who">
+  <div class="container for-who-inner">
+    <div class="section-label">Who This Is For</div>
+    <h2 class="section-h2">For the parish coordinator <span class="accent">who has done enough.</span></h2>
+    <p>
+      You've been running adoration on faith and a Google Sheet for years. You know every regular by name and call them when there's a gap. You love this ministry, but the logistics are exhausting.
+    </p>
+    <p>
+      <strong>Guardians of the Sacred Chapel is for you.</strong> It's not a corporate platform. It's a tool that quietly handles the scheduling so your parish can grow Eucharistic devotion without the hassle. Built specifically for the people doing this work, by the people doing this work.
+    </p>
+  </div>
+</section>
+
+<!-- ============ FORM ============ -->
+<section class="form-section" id="request">
+  <div class="container form-inner">
+    <div class="form-header">
+      <div class="section-label">Request Access</div>
+      <h2 class="section-h2">Help us bring this <span class="accent">to your parish.</span></h2>
+      <p>We're working with a small number of pilot parishes. Tell us about yours.</p>
+    </div>
+
+    <form class="gsc-form" id="contactForm" action="https://formspree.io/f/xaqkelln" method="POST">
+      <div class="field">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required autocomplete="name" />
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required autocomplete="email" />
+      </div>
+      <div class="field">
+        <label for="parish">Parish &amp; Location</label>
+        <input type="text" id="parish" name="parish" placeholder="e.g. St. Henry, Hollywood FL" required />
+      </div>
+      <div class="field">
+        <label for="timeline">When would you need this?</label>
+        <select id="timeline" name="timeline" required>
+          <option value="">Choose a timeframe…</option>
+          <option value="ASAP">As soon as possible — we're struggling now</option>
+          <option value="Within 3 months">Within the next 3 months</option>
+          <option value="Within 6 months">Within the next 6 months</option>
+          <option value="Within a year">Within the next year</option>
+          <option value="Exploring">Just exploring</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="message">Tell us about your chapel</label>
+        <textarea id="message" name="message" placeholder="How many hours? How many volunteers? What's hardest about running it today?"></textarea>
+      </div>
+      <button type="submit" class="form-submit">Request Access</button>
+      <p class="form-help">We'll respond personally within a few days. No bots.</p>
+    </form>
+
+    <div class="form-success" id="formSuccess">
+      <h3>Thank you.</h3>
+      <p>We'll be in touch soon. May the Lord bless your parish.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-tag">May the Sacred Heart of Jesus be praised, adored, and loved.</div>
+    <div class="footer-tag-es">Sea alabado, adorado y amado el Sagrado Corazón de Jesús.</div>
+    <div class="footer-meta">Guardians of the Sacred Chapel · Built by parishioners</div>
+  </div>
+</footer>
+
+<script>
+  // Intercept form submission to show inline success instead of redirecting
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('.form-submit');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' },
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Request Access';
+        alert('Something went wrong. Please try again or email us directly.');
+      }
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = 'Request Access';
+      alert('Could not send. Please check your connection.');
+    }
+  });
+</script>
+
+</body>
+</html>
